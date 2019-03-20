@@ -1,0 +1,17 @@
+Once you open the folder named « Static_visualisation », you must execute the code « ExtractODMat.py » by following these steps :
+
+- Modify the path to your XML fils (given in the folder « data ») in the script ExtractODMat.py
+- Run the script
+- Execute ODMatFromXML(path) on the console
+
+If you want to use another XML file, the format needed is specified in the document « XML format. ».
+
+The execution could be long, but you have to do it only once.
+
+Then a text file named ‘ODMat.txt’ is created in your folder. You can now execute the other codes that requires it. You have to modify all the paths that are on the top of the codes before executing one.
+
+Cerlcle.py and Lignes_droites.py create an image by the execution of the script.
+
+CarteOD.py requires an additional statement on the console. You have to execute the script and then execute main(n) in the console where n is the number of rows (and columns) you want for your visualisation. The algorithm is quite long, consider not to exceed 15 rows and columns. The details of the visualisation are in the file ‘ReadODMap.rtf’.
+
+Trace_carte.py is an auxiliary script, do not execute it.
