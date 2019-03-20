@@ -6,7 +6,7 @@ Created on Tue Nov 20 16:37:17 2018
 @author: fabienduranson
 """
 import csv
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 import xml.etree.ElementTree as ET
 import math
 import wx
@@ -30,7 +30,7 @@ class Network:
         # make a blank image for the text, initialized to transparent text color
         # h = 1440
         # w = 2048
-        im = Image.new('RGBA',(w+600,h), (255,255,255,0))
+        im = Image.new('RGBA',(w,h), (255,255,255,0))
         
         # get a drawing context
         draw = ImageDraw.Draw(im)
@@ -243,49 +243,5 @@ def find_by_id(ID,paths):
 def trace(draw,h,w,dims,limits,l):
     Lyon6x3 = Network('Lyon mamene')
     Lyon6x3.from_XML(path_to_network)
-    dims = Lyon6x3.limits()
-    limits = (0,w,0,h)
     Lyon6x3.reveal(draw,h,w,dims,limits,l)
-    
 
-def legend(draw,type_l,params,h,w,l):
-    for i in range(4*l):
-        draw.line((w+i,0,w+i,h),'black')
-    if type_l == 'circles':
-        c1 = (w+100,int(1/15*h))
-        c2 = (w+100,int(2/15*h))
-        size = int(w/36)
-        font = ImageFont.truetype('/Library/Fonts/Arial.ttf', size = size)
-        p1 = (w+100+int(1/30*w),int(1/15*h)-int(size/2))
-        p2 = (w+100+int(1/30*w),int(2/15*h)-int(size/2))
-        r = 40
-        circle(draw,c1,r,(0,0,255))
-        circle(draw,c2,r,(255,0,0))
-        txt1 = 'Origins'
-        txt2 = 'Destinations'
-        draw.text( p1, txt1,font = font, fill = (0,0,0))
-        draw.text( p2, txt2, font = font, fill = (0,0,0))
-    if type_l == 'vertical scale':
-        c1,c2,txt1,txt2 = params
-        for t in range (400):
-            c = (c1[0]*(1-t) + c2[0]*t, c1[1]*(1-t) + c2[1]*t, c1[2]*(1-t) + c2[2]*t)
-            draw.line((800-t,w+250,800-t,w+350),c)
-    if type_l == "carre":
-        size = int(w/50)
-        font = ImageFont.truetype('/Library/Fonts/Arial.ttf', size = size)
-        c, txt = params
-        draw.rectangle((w+150,int(h/2)-3,w+153,int(h/2)),c)
-        draw.text((w+200,int(h/2)-18), txt,font = font, fill = (0,0,0))
-
-def basic_frame(w,h,type_legend,params):
-    im = Image.new('RGBA',(w+600,h), (255,255,255,0))
-    draw = ImageDraw.Draw(im)
-    l = 2
-    trace(draw,h,w,(0,w,0,h),(0,w,0,h),l)
-    legend(draw,type_legend,params,h,w,l)
-    return im,draw
-
-def circle(draw, centre, rayon, couleur):
-    x0y0 = (centre[0]-rayon/2,centre[1]-rayon/2)
-    x1y1 = (centre[0]+rayon/2,centre[1]+rayon/2)
-    draw.ellipse(x0y0+x1y1, fill = couleur)
