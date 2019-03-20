@@ -1,0 +1,7 @@
+The image you may obtain might be a little bit confusing. We’ll help you understand it and then it will be clearer and more efficient.
+
+The execution is made with a parameter n. This parameter divides the map of your network in n columns and n rows, what creates n*n regions.
+
+To analyse the visualisation, you must understand that there are two stages in this image : a foreground and a background. The foreground corresponds to the origins while the background gives informations about the destinations of the users. To read this Map, proceed like this : first select a region of origins, you’ll have information about all the users that come from this region; then look at the smaller map inside this region, the colors put on each region of the small map show the relative number of users that had gone to this region.
+
+The color scale goes naturally from white to red. White corresponds to a couple (region of origin, region of destination) that no-one took, and red correspond to the couple most used.
