@@ -1,7 +1,10 @@
-In order to visualize a MotionRug, you have to execute the "MotionRugsQte.py" or the "MotionRugsVitesse.py" code.
+A motion rugs is a 2D representation of a 3D system. The two dimensions of the space are converted into a single
+dimension using Hilbert curves.
 
-The "MotionRugsQte.py" shows the evolution of the quantity of vehicle per road.
+The representation then shows :
+- the 1D space on the y-axis
+- the time on the x-axis
 
-The "MotionsRugsVitesse.py" shows the ratio between the real speed and the maximum allowed speed.
+By changing the colors of the cases, different things may be shown, like the average speed on a road, the number of vehicles, etc.
 
-To execute the code, please change the path to your XML file, then run the script.
+
