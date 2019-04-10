@@ -1,6 +1,6 @@
-Once you open the folder named « Static_visualisation », you must execute the code « ExtractODMat.py » by following these steps :
+You must execute the code « ExtractODMat.py » by following these steps :
 
-- Modify the path to your XML fils (given in the folder « data ») in the script ExtractODMat.py
+- Modify the path to your XML file (given in the folder « data ») in the script ExtractODMat.py
 - Run the script
 - Execute ODMatFromXML(path) on the console
 
