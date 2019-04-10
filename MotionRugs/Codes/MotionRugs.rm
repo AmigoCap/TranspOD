@@ -1,0 +1,7 @@
+In order to visualize a MotionRug, you have to execute the "MotionRugsQte.py" or the "MotionRugsVitesse.py" code.
+
+The "MotionRugsQte.py" shows the evolution of the quantity of vehicle per road.
+
+The "MotionsRugsVitesse.py" shows the ratio between the real speed and the maximum allowed speed.
+
+To execute the code, please change the path to your XML file, then run the script.
